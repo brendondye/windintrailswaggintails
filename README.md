@@ -28,14 +28,14 @@ Windin' Trails' Waggin' Tails is a professional dog care service offering a rang
 ### Setup and Installation
 1. **Clone the Repository**: **`git clone https://github.com/JBrocklyAnderson/portfolio.git`**
 2. **Navigate to the Project Direction: **`cd windy-trails`**
-3. **Open the HTML File**: Open **`index.html`** in a web browser to view the website, or [click here](https://jbrocklyanderson.github.io/windintrailswaggintails/)
+3. **Open the HTML File**: Open **`index.html`** in a web browser to view the website, or [click here](https://brendondye.github.io/windintrailswaggintails/)
 
 ### Contribution Guidelines
 - **Reporting Issues**: Use the GitHub Issues tab To report bugs or suggest enhancements.
 - **Submitting Pull Requests**: Fork the repository, make changes, and submit a poll request for review.
 
 ### Contact
-For any additional questions or feedback, please contact Joseph Broccoli Anderson at jbrocklyanderson@gmail.com or call +1 (530) 417-1973
+For any additional questions or feedback, please contact Joseph Brockly-Anderson at jbrocklyanderson@gmail.com or call +1 (530) 417-1973
 
 ### License
 All rights reserved by Windin' Trails' Waggin' Tails 
