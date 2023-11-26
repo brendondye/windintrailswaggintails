@@ -1,4 +1,4 @@
-/* Import 'Playpen Sans' font family */
+	/* Import 'Playpen Sans' font family */
 @import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@800&display=swap');
 
  /* Outline elements for layout troubleshooting when necessary
@@ -24,7 +24,7 @@
 html {
 	scroll-behavior: smooth;
 	margin: 0 auto;
-	cursor: url("../images/cursors/dog-cursor.png") 16 16, auto; /* Set cursor focal point */
+	cursor: url("../images/cursors/dog-cursor.png") 0 4, auto; /* Set cursor focal point */
 } 
 
 .header {
@@ -496,6 +496,11 @@ address {
 	.about-me-info h2 {
 		text-align: center; /* Align headers horizontally */
 		margin: 1rem 0 0 0;
+		font-size: calc(1.57rem / 1.5);
+	}
+
+	.about-me-info p {
+		font-size: calc(1.57rem / 2);
 	}
 
 	.avatar-container {
@@ -507,12 +512,21 @@ address {
 	/* Testimonials -------------------------------------------------- */
 	.testimonial-area h2 {
 		overflow: hidden;
+		font-size: calc(1.57rem / 1.5);;
+	}
+
+	.testimonial-area p {
+		font-size: calc(1.57rem / 2);
 	}
 
 	.dog-paw-rating img {
 		width: 8.25vw; /* Set responsive size for rating "stars" */
 		height: 8.25vw;
 		padding: 3vw;
+	}
+
+	.testimony {
+		min-height: 21.25rem;
 	}
 	
 	/* Image gallery -------------------------------------------------- */
@@ -551,6 +565,22 @@ address {
 	.message-field {
 		height: 5rem;
 	} */
+
+	.contact h2 {
+		font-size: calc(1.57rem / 1.5);
+	}
+
+	.contact p {
+		font-size: calc(1.57rem / 2);
+	}
+
+	.credits h2 {
+		font-size: calc(1.57rem / 1.5);
+	}
+
+	.credits p {
+		font-size: calc(1.57rem / 2);
+	}
 }
 
 /* Large screen devices */
