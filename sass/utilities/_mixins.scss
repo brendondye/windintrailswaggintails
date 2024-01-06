@@ -1,0 +1,7 @@
+ /* _mixins.scss */
+
+ // Define mixins
+@mixin flexAlignBoth {
+    justify-content: center;
+    align-items: center;
+}

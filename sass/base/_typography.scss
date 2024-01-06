@@ -1,0 +1,100 @@
+/* _typography.scss */
+
+// Asign font classes
+.heading {
+    font-family: $heading-font-family;
+    color: $green;
+    text-shadow: $txtShadowBlack;
+}
+
+// Assign font sizes
+#comName {
+    font-size: max(3vw, 1rem);
+}
+
+#comTagline {
+    font-size: max(2vw, 0.875rem);
+
+    sup {
+        font-size: max(1vw, 0.4375rem);
+    }
+}
+
+#navBar {
+    font-size: max(1.75vw, 0.875rem);
+}
+
+#aboutMeContainer { 
+    p {
+    font-family: $base-font-famly;
+    color: $white;
+    line-height: 1.5rem;
+    }
+
+    p:nth-of-type(2) {
+        margin-block: 0.5rem;
+    }
+}
+
+
+#testimonialArea {
+    h2 {
+        text-align: center;
+    }
+
+    p {
+        color: $white;
+        font-family: $base-font-famly;
+    }
+
+    p:first-of-type {
+        line-height: 1.5rem;
+    }
+
+
+    p:not(:first-of-type) { 
+        text-align: right;
+
+    }
+
+    .test-name {
+        color: $green;
+    }
+
+    .test-date {
+        font-size: calc($base-font-size * 0.7);
+    }
+}
+
+
+
+
+
+
+
+#siteMap {
+    font-size: max(1.75vw, 0.875rem);
+}
+
+
+#footerBottom {
+    text-align: center;
+    color: $white;
+
+    a {
+        color: $green;
+    }
+
+    a:hover {
+        color: $aqua;
+    }
+
+    p {
+        font-family: $base-font-famly;
+        line-height: 1.5rem;
+    }
+}
+
+
+
+

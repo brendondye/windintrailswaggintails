@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@800&display=swap'); // `font-family: 'Playpens Sans', cursive;
+
+/* Import utilities */
+@import 'utilities/variables'; // Add variables
+@import 'utilities/mixins'; // Add mixins
+@import 'utilities/animations'; // Add keyframes
+
+/* Import base styles */
+@import 'base/reset'; // Add reset stylesheet
+@import 'base/typography'; // Add typography stylesheet
+
+/* Import layout styles */
+@import 'layouts/layout'; // Add layout styles
+
+/* Import specific UI component styles */
+@import 'components/images'; // Add styling to images

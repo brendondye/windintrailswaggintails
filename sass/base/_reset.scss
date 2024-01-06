@@ -1,0 +1,48 @@
+/* _reset.scss */
+
+// Work with a more intuitive model for box-sizing
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+// Remove browser-defined margins and padding
+body, header, footer, section, article, aside, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+    margin: 0;
+    padding: 0;
+}
+
+// Ensure content fills the viewport
+html {
+    width: 100%;
+    min-height: 100%;
+    font-size: $base-font-size;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    cursor: $dog;
+}
+
+// Normalize list types {
+ul, ol {
+    list-style: none;
+}
+
+// Normalize anchor tags 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+// Ensure responsivity of media elements
+img, picture, svg, video, audio {
+    display: block;
+    max-width: 100%;
+    border: none;
+}
+
+// Reset form element styles
+button, input, select, textarea, address {
+    margin: 0;
+    border: none;
+    background: transparent;
+    font: inherit;
+}

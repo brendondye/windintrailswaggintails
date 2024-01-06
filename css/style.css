@@ -1,639 +1,399 @@
-	/* Import 'Playpen Sans' font family */
-@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@800&display=swap');
-
- /* Outline elements for layout troubleshooting when necessary
- * {
-	outline: 1px solid red;
-}  */
-
-/* Define keyframes animation */
+@import url("https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@800&display=swap");
+/* Import utilities */
+/* _variables.scss */
+/* _mixins.scss */
+/* _animations.scss */
 @keyframes oscillate {
-	0%, 100% { transform: scale(1, 1); }
-	12.5% { transform: scale(1.5, 0.5); } /* Squeeze hard vertically */
-	37.5% { transform: scale(0.5, 1.5); } /* Squeeze hard horizontally */
-	62.5% { transform: scale(1.25, 0.75); } /* Squeeze soft vertically */
-	87.5% { transform: scale(0.75, 1.25); } /* Squeeze soft horizontally */
+  0%, 100% {
+    transform: scale(1, 1);
+  }
+  12.5% {
+    transform: scale(1.5, 0.5);
+  } /* Squeeze hard vertically */
+  37.5% {
+    transform: scale(0.5, 1.5);
+  } /* Squeeze hard horizontally */
+  62.5% {
+    transform: scale(1.25, 0.75);
+  } /* Squeeze soft vertically */
+  87.5% {
+    transform: scale(0.75, 1.25);
+  } /* Squeeze soft horizontally */
+}
+#testimonialArea img:hover {
+  animation: oscillate 0.5s ease-in-out;
 }
 
-/* Set root font size */
-:root {
-	font-size: 16px;
+/*
+.will-animate {
+	opacity: 0;
+	transform: translateY(10rem);
+	transition: all 1s ease-in;
 }
 
-/* Set default margins, cursor, and scroll behavior */
-html {
-	scroll-behavior: smooth;
-	margin: 0 auto;
-	cursor: url("../images/cursors/dog-cursor.png") 0 4, auto; /* Set cursor focal point */
-} 
-
-.header {
-	max-width: 1600px; /* Prevent background from filling screen width on large screens */
-	background-image: url("../images/raster/man-and-his-dog-upper-echo-lake.jpeg");
-	background-size: cover; /* Fill the entire container */
-	background-position: center; /* Center background along X- and Y-axes */
-}
-
-.header-info {		
-	display: flex; /* Use Flexbox */
-	padding: 1rem;
-	box-sizing: border-box; /* Ensure padding is included within defined width */
-	justify-content: center; /* Align items horizontally */
-	align-items: center; /* Align items vertically */
-}
-
-#headerLogo {
-	width: 15vw; /* Set responsive sizing parameter */
-	padding: 1rem 1rem 1rem 0; /* Add padding on all but right side */
-}
-
-/* Comment out company logo animation
-#headerLogo:hover {
-	animation: oscillate 1.2s ease forwards;
+.in-view {
+	opacity: 1;
+	transform: translateY(0);
 } */
-
-.header-tags h1, .header-tags h2 {
-	font-family: 'Playpen Sans';
-	color: #80af1e;
-	text-shadow: 0.1rem 0.1rem 1rem #031f3d; /* Define X- and Y-axis offset, blur radius, and color of text shadow */
-	font-size: 5vw;
-	margin: 0;
+.float-up-hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+  transition: opacity 0.6s cubic-bezier(0, 0, 0, 1), transform 0.6s cubic-bezier(0, 0, 0, 1);
 }
 
-.header-tags h2 {
-	font-family: 'Playpen Sans';
-	font-size: 3.333vw;
-	margin: 0;
+.float-up-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.trademark {
-	font-size: 1.25vw;
+/* Import base styles */
+/* _reset.scss */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body, header, footer, section, article, aside, h1, h2, h3, h4, h5, h6, p, ul, ol, li {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  min-height: 100%;
+  font-size: 16px;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  cursor: url("../images/cursors/dog-cursor.png") 0 4, auto;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img, picture, svg, video, audio {
+  display: block;
+  max-width: 100%;
+  border: none;
+}
+
+button, input, select, textarea, address {
+  margin: 0;
+  border: none;
+  background: transparent;
+  font: inherit;
+}
+
+/* _typography.scss */
+.heading {
+  font-family: "Playpen Sans", cursive;
+  color: #80af1e;
+  text-shadow: 0.25rem 0.25rem 1rem #031f3d;
+}
+
+#comName {
+  font-size: max(3vw, 1rem);
+}
+
+#comTagline {
+  font-size: max(2vw, 0.875rem);
+}
+#comTagline sup {
+  font-size: max(1vw, 0.4375rem);
+}
+
+#navBar {
+  font-size: max(1.75vw, 0.875rem);
+}
+
+#aboutMeContainer p {
+  font-family: Bahnschrift, "DIN Alternate", "Franklin Gothic Medium", "Nimbus Sans Narrow", sans-serif-condensed, sans-serif;
+  color: #ffffff;
+  line-height: 1.5rem;
+}
+#aboutMeContainer p:nth-of-type(2) {
+  margin-block: 0.5rem;
+}
+
+#testimonialArea h2 {
+  text-align: center;
+}
+#testimonialArea p {
+  color: #ffffff;
+  font-family: Bahnschrift, "DIN Alternate", "Franklin Gothic Medium", "Nimbus Sans Narrow", sans-serif-condensed, sans-serif;
+}
+#testimonialArea p:first-of-type {
+  line-height: 1.5rem;
+}
+#testimonialArea p:not(:first-of-type) {
+  text-align: right;
+}
+#testimonialArea .test-name {
+  color: #80af1e;
+}
+#testimonialArea .test-date {
+  font-size: 11.2px;
+}
+
+#siteMap {
+  font-size: max(1.75vw, 0.875rem);
+}
+
+#footerBottom {
+  text-align: center;
+  color: #ffffff;
+}
+#footerBottom a {
+  color: #80af1e;
+}
+#footerBottom a:hover {
+  color: #00ffff;
+}
+#footerBottom p {
+  font-family: Bahnschrift, "DIN Alternate", "Franklin Gothic Medium", "Nimbus Sans Narrow", sans-serif-condensed, sans-serif;
+  line-height: 1.5rem;
+}
+
+/* Import layout styles */
+/* _layout.scss */
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-align-both {
+  justify-content: center;
+  align-items: center;
+}
+
+.border {
+  border: 0.25rem solid #80af1e;
+}
+
+.box-shadow {
+  box-shadow: 0.1rem 0.1rem 0.25rem #031f3d;
+}
+
+body {
+  grid-template-columns: 1.5rem 1fr 1.5rem;
+  grid-template-areas: "header header header" ". about ." ". testimony ." "gallery gallery gallery" "footer footer footer";
+}
+@media (min-width: 769px) and (max-width: 1280px) {
+  body {
+    grid-template-columns: 1fr 1fr 66.67% 1fr 1fr;
+    grid-template-areas: "header header header header header" ". . about . ." ". . testimony . ." ". gallery gallery gallery ." "footer footer footer footer footer";
+  }
+}
+@media (min-width: 1281px) {
+  body {
+    grid-template-columns: 1fr 1fr 50% 1fr 1fr;
+    grid-template-areas: ". header header header ." ". . about . ." ". . testimony . ." ". gallery gallery gallery ." ". footer footer footer .";
+  }
+}
+body header, body section {
+  margin: 0 0 1rem 0;
+}
+
+header {
+  grid-area: header;
+}
+
+#aboutMeContainer {
+  grid-area: about;
+}
+
+#testimonialArea {
+  grid-area: testimony;
+}
+
+#imageGallery {
+  grid-area: gallery;
+}
+
+footer {
+  grid-area: footer;
 }
 
 .nav-bar {
-	display: flex; /* Use Flexbox */
-	justify-content: center; /* Center anchor tags */
-	align-items: center; /* Align them vertically in the navigation bar */
-	flex-wrap: wrap; /* Allow row wrapping */
-	padding: 0.5rem 1rem 0.5rem 1rem;
-	background-color: rgba(3,31,61,0.8);
-	font-family: 'Playpen Sans';
-	font-size: 2.5vw;
-	text-shadow: 0.1rem 0.1rem 0.5rem #031f3d;
+  flex-wrap: wrap; /* Allow row wrapping */
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  background-color: rgba(3, 31, 61, 0.8);
 }
-
 .nav-bar a {
-	text-decoration: none; /* Remove hyperlink underline from links */
-	font-weight: 800;
-	color: #80af1e;
-	cursor: url("../images/cursors/paw-cursor.png") 16 16, pointer; /* Set pointer cursor for links and buttons */
-	padding: 0 1rem;
+  color: #80af1e;
+  cursor: url("../images/cursors/paw-cursor.png") 16 16, pointer; /* Set pointer cursor for links and buttons */
+  padding: 0 1rem;
 }
-
 .nav-bar a:hover {
-	text-decoration: underline; /* Add underline to links when hovered */
-	color: #00ffff;
+  color: #00ffff;
 }
 
+#comDetails {
+  padding: 1rem;
+}
 
-/* Body ---------------------------------------------------- */
+#aboutMeContainer {
+  background-color: rgba(3, 31, 61, 0.8);
+  padding: 1rem;
+}
+
+#testimonialArea {
+  background-color: rgba(3, 31, 61, 0.8);
+  padding: 1rem;
+}
+#testimonialArea #testimonialCarousel {
+  flex-direction: column;
+  position: relative;
+  gap: 1rem;
+  margin: 1rem 0 0 0;
+}
+#testimonialArea #testimonialCarousel .arrow {
+  align-self: center;
+}
+#testimonialArea .rating {
+  flex-direction: row;
+  gap: 1rem;
+}
+#testimonialArea .testimonial-list {
+  position: relative;
+}
+#testimonialArea .testimony {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in, visibility 0.3s ease-in;
+  z-index: 10;
+}
+#testimonialArea .testimony.active {
+  visibility: visible;
+  opacity: 1;
+  z-index: 20;
+}
+
+#imageGallery {
+  position: relative;
+  overflow: hidden;
+}
+#imageGallery .slide-wrapper {
+  min-width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+#footer {
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+#siteMap {
+  gap: 1rem;
+}
+
+#footerBottom {
+  gap: 1rem;
+  flex-direction: column;
+}
+@media (min-width: 513px) {
+  #footerBottom {
+    flex-direction: row;
+  }
+}
+#footerBottom a {
+  cursor: url("../images/cursors/paw-cursor.png") 16 16, pointer;
+}
+
+@supports (backdrop-filter: blur(1rem)) {
+  .bg-blur {
+    background-color: rgba(3, 31, 61, 0.8);
+    backdrop-filter: blur(1rem); /* Blur the page background through a transparent element */
+  }
+}
+/* Import specific UI component styles */
+/* _images.scss */
 body {
-	max-width: 1600px;
-	margin: 0 auto; /* Center elements horizontally */
-	background-image: url("../images/raster/dogs-playing-in-mountain-lake.png"); /* Set background */
-	background-position: center bottom; /* Position background along X and Y axes */
-	background-attachment: fixed; /* Fix background while scrolling */
-	background-repeat: no-repeat; /* Avoid repeating */
-	background-size: cover; /* Stretch to fill screen */
+  background-image: url("../images/raster/dogs-playing-in-mountain-lake.png");
+  background-position: center bottom; /* Position background along X and Y axes */
+  background-attachment: fixed; /* Fix background while scrolling */
+  background-repeat: no-repeat; /* Avoid repeating */
+  background-size: cover; /* Stretch to fill screen */
 }
 
-
-.about-me-container {
-	max-width: 1000px; /* Disallow width to flush with header */
-	margin: 1rem auto; /* Add margin */
-	display: block; /* Set block display for floating child */ 
+header {
+  background-image: url("../images/raster/man-and-his-dog-upper-echo-lake.jpeg");
+  background-size: cover; /* Fill the entire container */
+  background-position: center; /* Center background along X- and Y-axes */
 }
 
-.avatar-container {
-	float: left; /* Float image container around text */
-	margin-right: 2rem; /* Add space between the avatar image and info */
-	margin-bottom: 1rem; /* Prevent text from hitting image bottom */
-	max-width: 14rem; /* Prevent oversizing */
+svg path {
+  fill: #80af1e;
 }
 
-#avatarImage {
-	max-width: 100%; /* Keep image within container */
-	border: 0.25rem solid #80af1e; /* Define border width, style, and color */
-	box-shadow: 0.1rem 0.1rem 0.25rem #031f3d; /* Define X- and Y-axis offset, blur radius, and color of shadow */
-	display: block; /* Keep image floating */
-	
+.arrow {
+  width: max(5vw, 3rem);
+  cursor: url("../images/cursors/paw-cursor.png") 16 16, pointer;
+  z-index: 10;
 }
 
-.about-me-info {
-	background-color: rgba(3,31,61,0.8);
-	padding: 1rem;
-	text-align: justify;
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	font-size: 2rem;
-	color: #ffffff;
-	
-}
-
-.about-me-info h2 {
-	font-family: 'Playpen Sans';
-	color: #80af1e;
-	text-shadow: 0.1rem 0.1rem 0.5rem #031f3d; /* Define X- and Y-axis offset, blur radius, and color of text shadow */
-}
-
-.about-me-info a {
-	text-decoration: none; 
-	font-weight: 800;
-	color: #80af1e;
-	cursor: url("../images/cursors/paw-cursor.png") 16 16, pointer;
-}
-
-.about-me-info a:hover {
-	text-decoration: underline; 
-	font-weight: 800;
-	color: #00ffff;
-}
-
-
-/* Testimonials -------------------------------------------------- */
-.testimonial-area {
-	max-width: 1000px; /* Disallow width to flush with header */
-	margin: 1rem auto; 
-	padding: 1rem 0 1rem 0;
-	color: #ffffff;
-	background-color: rgba(3,31,61,0.8);
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	font-size: 2rem;
-}
-
-.testimonial-area h2 {
-	color: #80af1e;
-	text-shadow: 0.1rem 0.1rem 0.5rem #031f3d;
-	text-align: center;
-	font-family: 'Playpen Sans'; 
-	margin: 1rem 0 0 0;
-}
-
-.testimonials {
-	margin: 1rem;
-	display: flex;
-	flex-direction: column; /* Stack child elements */
-	align-items: center; /* Center horizontally */
-	justify-content: center; /* Center vertically */
-	padding: 1rem;
-}
-
-.testimonial-list {
-	display: flex;
-	flex-direction: column;
-	list-style: none; /* Remove bullet points */
-	width: 100%;
-	padding: 0;
-	transition: transform 0.3s ease-in-out; /* Add transition for script interactivity */
-}
-
-.up-arrow, .down-arrow {
-	border: none; /* Remove borders from buttons */
-	cursor: url("../images/cursors/paw-cursor.png") 16 16, pointer;
-	background-color: transparent; 
-	opacity: 0.5;
+.arrow:hover svg path {
+  fill: #00ffff;
 }
 
 .down-arrow {
-	transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
-.up-arrow img, .down-arrow img {
-	width: 3rem;
-	height: 2rem;
+#headerLogo {
+  width: clamp(5rem, 15vw, 15rem);
 }
 
-.up-arrow:hover, .down-arrow:hover {
-	opacity: 1;
-	transform: scale(1.5, 1.5); /* Enlarge buttons when hovered */
-	transition: transform 0.3s;
+#avatarImage {
+  border-radius: 5rem;
+  shape-outside: polygon(0px 0px, 0px 100%, 100% 0px, 100% 85%, 75% 100%);
+  float: left;
+  width: clamp(7.5rem, 20vw, 15rem);
+  margin: 0 0.5rem 0.5rem 0;
 }
 
-.down-arrow:hover {
-	transform: scale(1.5, 1.5) rotate(180deg);
-	transition: transform 0.3s;
+#aboutMe a {
+  color: #80af1e;
+  cursor: url("../images/cursors/paw-cursor.png") 16 16, pointer;
+}
+#aboutMe a:hover {
+  color: #00ffff;
 }
 
-.testimony {
-	width: 100%;
-	min-height: 35rem; /* Prevent screen jostling when clicking arrow buttons */
-	text-align: justify;
-	display: none; /* Hide from script by default */	
-	transition: opacity 0.3s ease-in-out; /* Change opacity from opaque to transparent */
-	justify-content: center;
+#imageGallery img {
+  width: 100%;
+}
+#imageGallery button {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+}
+#imageGallery button:nth-of-type(2) {
+  right: 0;
+}
+#imageGallery .arrow-prev {
+  transform: rotate(270deg);
+  width: 20%;
+}
+#imageGallery .arrow-next {
+  transform: translateY(-50%) rotate(90deg);
+  position: absolute;
+  right: 0;
+  width: 20%;
 }
 
-.testimony.active {
-	display: flex; /* Show when script makes active */
-	flex-direction: column;
-}
-
-.dog-paw-rating {
-	display: flex;
-	justify-content: center;
-}
-
-.dog-paw-rating img {
-	width: 2.5rem;
-	height: 2.5rem;
-	padding: 0 0.5rem 0 0.5rem;
-	background: radial-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0) 65%); /* Mimick glow */
-	padding: 1rem;
-	mix-blend-mode: lighten; /* Soften blending */
-	transition: transform 0.5s ease; /* Set stage for animation */
-}
-
-.dog-paw-rating img:hover {
-	animation: oscillate 0.5s ease forwards; /* Use `oscillate` */
-}
-
-.test-name {
-	color: #80af1e;
-	margin: 0;
-	text-align: right;
-}
-
-.test-date {
-	color: #ffffff;
-	font-size: 1rem; 
-	margin: 0.5rem 0 2rem 0; 
-	text-align: right;
-} 
-
-
-/* Image gallery -------------------------------------------------- */
-.image-gallery {
-	max-width: 1000px; /* Disallow width to flush with header */
-	margin: 1rem auto; 
-}
-
-.slideshow {
-	position: relative; /* Set the stage for absolute positioning of buttons */
-	overflow: hidden; /* Hide images not within gallery viewer */ 
-	margin-bottom: 1rem; /* Add space before next element */
-	box-shadow: 0.1rem 0.1rem 0.25rem #031f3d;
-}
-
-.slideshow .slides {
-	list-style: none; /* Remove bullet points */
-	display: flex; /* Arrange images horizontally */
-	margin: 0;
-	padding: 0;
-}
-
-.slideshow .slide {
-	min-width: 100%; /* Define 1-to-1 slide-to-image ratio */
-}
-
-.slide-image {
-	background-size: cover; /* Cover the container */
-	background-position: center center;
-	height: 60vh; /* Set a responsive height */
-	border: solid 0.25rem #80af1e;
-}
-
-.slideshow .arrows {
-	position: absolute; /* Position arrow button containers */
-	top: 0;
-	width: 100%;
-	height: 100%;
-	display: flex;	
-}
-
-.slideshow .arrows .arrow {
-	background: transparent; /* Hide button background */ 
-	border: none; /* Remove border */
-	width: 50%; /* Enable clickability across the image */
-	cursor: url("../images/cursors/paw-cursor.png") 16 16, pointer;
-}
-
-.slideshow .arrows .arrow span {
-	display: block;
-	background-size: contain; /* Keep arrows within their container */
-	background-repeat: no-repeat; /* Prevent repeating */
-	width: 2rem;
-	height: 3rem;
-	transform: translateY(-1.5rem); /* Fine-tune positional adjustments */ 
-}
-
-.slideshow .arrows .arrow .arrow-next span {
-	cursor: url("../images/raster/paw-cursor.png") 16 16, pointer;
-}
-
-.slideshow .arrows .arrow span:hover {
-	opacity: 1; /* "Brighten" arrows with full opacity */
-	transform: scale(1.5, 1.5) translateY(-1rem); /* Enlarge arrows */
-	transition: transform 0.1s ease-in; /* Set transition parameters */
-}
-
-.slideshow .arrow-prev span {
-	position: absolute; /* Position arrow button indicators */
-	background-image: url('../images/svg/left-arrow.svg');
-	left: 3rem;
-}
-
-.slideshow .arrow-next span {
-	position: absolute;
-	background-image: url('../images/svg/right-arrow.svg');
-	right: 2.5rem;
-}
-
-/* Footer ------------------------------------------------ */
-footer {
-	max-width: 1600px; /* Keep flush with header */
-	background-color: rgba(3,31,61,0.8);
-	color: #ffffff; 
-	margin: 0;
-	padding: 1rem;
-}
-
-.footer-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	gap: 1rem;
-}
-
-.footer-bottom {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 1.25rem;
-	margin-bottom: 2rem;
-	gap: 1rem;
-}
-
-.contact h2 {
-	font-family: 'Playpen Sans';
-	color: #80af1e;
-	text-shadow: 0.1rem 0.1rem 0.5rem #031f3d;
-	font-size: 1.5rem;
-}
-
-address {
-	font-style: normal; /* Remove italics */
-}
-
-.sitemap__columns {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	font-size: 2.5vw;
-	justify-content: center;
-	font-family: 'Playpen Sans';
-	text-shadow: 0.1rem 0.1rem 0.5rem #031f3d;
-}
-
-.sitemap__columns .column {
-	padding: 0 1rem;
-	line-height: 0.5rem;
-}
-
-.footer-container a {
-	color: #80af1e;
-	text-decoration: none;
-}
-
-.footer-container a:hover {
-	color: #00ffff;
-	text-decoration: underline;
-	cursor: url("../images/cursors/paw-cursor.png") 16 16, pointer;
-}
-
-/* Style the email form, input fields, and send button
-.input-field, .message-field {
-	background-color: #031f3d;
-	color: #ffffff;
-	border: none;
-	padding: 0.5rem;
-	box-shadow: inset 0 0 0.25rem #00ffff;
-	font-size: 2.5vw;
-} 
-
-.input-field:hover, .message-field:hover {
-	cursor: url("../images/cursors/bone-cursor.png"), text;
-}
-
-.input-field {
-	width: 90%;
-	margin-top: 0.25rem;
-}
-
-.message-field {
-	width: 90%;
-	margin-top: 0.25rem;
-}
-
-.input-field::placeholder, .message-field::placeholder {
-	color: #00ffff7f;
-}
-
-.submit-button {
-	background-color: transparent;
-	border: none;
-	font-family: 'Playpen Sans';
-	color: #80af1e;
-	font-size: 1.25rem;
-}
-
-.submit-button:hover {
-	color: #00ffff;
-	text-decoration: underline;
-	cursor: url("../images/cursors/paw-cursor.png") 16 16, pointer;
-} */
-
-.credits h2 {
-	color: #80af1e;
-	font-family: 'Playpen Sans';
-	text-shadow: 0.1rem 0.1rem 0.5rem #031f3d;
-	font-size: 1.5rem;
-}
-
-/* Small screen devices ------------------------------------------------ */
-@media (max-width: 551px) {
-	.header {
-		background-position: center right 25%; 
-		overflow: hidden; /* Prevent horizontal scrollbars if screen width becomes narrower than modern devices */
-	}
-	
-	#headerLogo {
-		width: 4.75rem; /* Set a minimum width for the company logo */
-	}
-	
-	.header-tags h1 {
-		font-size: 1.57rem; /* Set minimum font size */
-	}	
-
-	.header-tags h2 {
-		font-size: calc(1.57rem / 1.5); /* Calculate font size based on header 1 */
-	}
-
-	.trademark {
-		font-size: calc(1.57rem / 4)
-	}
-
-	.nav-bar a {
-		font-size: 0.785rem;
-		padding: 0 1rem;
-	}
-	
-	/* About me ---------------------------------------------------- */
-	.about-me-info {
-		display: flex;
-		flex-direction: column; /* Override floating avatar */
-		overflow: hidden;
-	}
-
-	.about-me-info h2 {
-		text-align: center; /* Align headers horizontally */
-		margin: 1rem 0 0 0;
-		font-size: calc(1.57rem / 1.5);
-	}
-
-	.about-me-info p {
-		font-size: calc(1.57rem / 2);
-	}
-
-	.avatar-container {
-		display: flex;
-		align-self: center;
-		margin: 0;
-	}
-
-	/* Testimonials -------------------------------------------------- */
-	.testimonial-area h2 {
-		overflow: hidden;
-		font-size: calc(1.57rem / 1.5);;
-	}
-
-	.testimonial-area p {
-		font-size: calc(1.57rem / 2);
-	}
-
-	.dog-paw-rating img {
-		width: 8.25vw; /* Set responsive size for rating "stars" */
-		height: 8.25vw;
-		padding: 3vw;
-	}
-
-	.testimony {
-		min-height: 21.25rem;
-	}
-	
-	/* Image gallery -------------------------------------------------- */
-	.slideshow .arrow-prev span {
-		left: 1rem; /* Leave more room for the image when screen width is narrow */
-	}
-	
-	.slideshow .arrow-next span {
-		right: 0.5rem;
-	}
-
-	/* Footer -------------------------------------------------- */
-	footer {
-		overflow: hidden;
-	}
-	.footer-bottom {
-		flex-direction: column; /* Change orientation of elements */
-		text-align: center;
-	}
-
-	.sitemap__columns {
-		font-size: 0.785rem;
-	}
-
-	/* Stylize form 
-	.contact form {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-
-	.input-field, .message-field {
-		font-size: 0.9rem;
-	}
-
-	.message-field {
-		height: 5rem;
-	} */
-
-	.contact h2 {
-		font-size: calc(1.57rem / 1.5);
-	}
-
-	.contact p {
-		font-size: calc(1.57rem / 2);
-	}
-
-	.credits h2 {
-		font-size: calc(1.57rem / 1.5);
-	}
-
-	.credits p {
-		font-size: calc(1.57rem / 2);
-	}
-}
-
-/* Large screen devices */
-@media (min-width: 1200px) {
-	.header-tags h1 {
-		font-size: 3.5rem; /* Set maximum font size for heading 1 */
-	}
-	
-	.header-tags h2 {
-		font-size: calc(3.75rem / 1.5); /* Calculate font size based on heading 1 */
-	}
-	
-	.trademark {
-		font-size: calc(3.75rem / 4);
-	}
-
-	#header-logo {
-		width: 11.25rem; /* Set maximum size of company logo */ 
-	}
-
-	.nav-bar {
-		font-size: 1.875rem;
-	}
-
-	.sitemap__columns {
-		font-size: 1.875rem;
-	}
-
-	/* Style input fields
-	.input-field, .message-field {
-		font-size: 1.875rem;
-	} */
-}
-
-/* For browsers that support backdrop filtering */
-@supports (backdrop-filter: blur(1rem)) {
-	.nav-bar {
-		background-color: rgba(3,31,61,0.8); 
-		backdrop-filter: blur(1rem); /* Blur the page background through a transparent element */ 
-	}
-	
-	.about-me-info { 
-		background-color: rgba(3,31,61,0.8);
-		backdrop-filter: blur(1rem); 
-	}
-
-	.testimonial-area {
-		background-color: rgba(3,31,61,0.8);
-		backdrop-filter: blur(1rem); 
-	}
-
-	footer {
-		background-color: rgba(3,31,61,0.8);
-		backdrop-filter: blur(1rem); 
-	}
-}
+/*# sourceMappingURL=style.css.map */

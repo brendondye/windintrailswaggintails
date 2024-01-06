@@ -1,0 +1,37 @@
+/* _animations.scss */
+
+// Define keyframes
+@keyframes oscillate {
+	0%, 100% { transform: scale(1, 1); }
+	12.5% { transform: scale(1.5, 0.5); } /* Squeeze hard vertically */
+	37.5% { transform: scale(0.5, 1.5); } /* Squeeze hard horizontally */
+	62.5% { transform: scale(1.25, 0.75); } /* Squeeze soft vertically */
+	87.5% { transform: scale(0.75, 1.25); } /* Squeeze soft horizontally */
+}
+
+#testimonialArea img:hover {
+	animation: oscillate 0.5s ease-in-out;
+}
+
+/*
+.will-animate {
+	opacity: 0;
+	transform: translateY(10rem);
+	transition: all 1s ease-in;
+}
+
+.in-view {
+	opacity: 1;
+	transform: translateY(0);
+} */
+
+.float-up-hidden {
+    opacity: 0;
+    transform: translateY(8rem);
+    transition: opacity 0.6s cubic-bezier(0, 0, 0, 1), transform 0.6s cubic-bezier(0, 0, 0, 1);
+}
+
+.float-up-visible {
+	opacity: 1;
+    transform: translateY(0);
+}

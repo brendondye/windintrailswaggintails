@@ -1,0 +1,32 @@
+/* _variables.scss */
+
+// Assign grid variables
+$gridColumnsMobile: 1.5rem 1fr 1.5rem;
+$gridColumnsDesktop: 1fr 1fr 66.67% 1fr 1fr;
+$gridColumnsLg: 1fr 1fr 50% 1fr 1fr;
+
+// Define cursors
+$dog: url("../images/cursors/dog-cursor.png") 0 4, auto;
+$paw: url("../images/cursors/paw-cursor.png") 16 16, pointer;
+
+// Assign font variables
+$base-font-size: 16px;
+$heading-font-family: 'Playpen Sans', cursive; // Define a font family for headings and navigation buttons
+$base-font-famly: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif; // Create base font stack
+// 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+
+// Assign colors
+$black:#031f3d;
+$blackA80:rgba(3, 31, 61, 0.8);
+$white: #ffffff;
+$green:#80af1e;
+$aqua:#00ffff;
+$red:#d33e2f;
+$orange:#f87821;
+$chocolate:#464646;
+
+$greenBorder: 0.25rem solid $green;
+$boxShadow: 0.1rem 0.1rem 0.25rem $black;
+$txtShadowBlack: 0.25rem 0.25rem 1rem $black;
+
