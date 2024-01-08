@@ -56,6 +56,7 @@ body {
 }
 
 header { grid-area: header; }
+#hook { }
 #aboutMeContainer { grid-area: about; }
 #testimonialArea { grid-area: testimony; }
 #imageGallery { grid-area: gallery; }
@@ -67,9 +68,13 @@ footer { grid-area: footer; }
 	background-color: $blackA80;
 
     a {
-        color: $green;
+        
         cursor: $paw; /* Set pointer cursor for links and buttons */
         padding: 0 1rem;
+    }
+
+    a:first-of-type, a:last-of-type {
+        color: $br-green;
     }
 
     a:hover {

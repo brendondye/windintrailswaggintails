@@ -118,6 +118,13 @@ button, input, select, textarea, address {
 #aboutMeContainer p:nth-of-type(2) {
   margin-block: 0.5rem;
 }
+#aboutMeContainer a {
+  color: #c0ff2c;
+  cursor: url("../images/cursors/paw-cursor.png") 16 16, pointer;
+}
+#aboutMeContainer a:hover {
+  color: #00ffff;
+}
 
 #testimonialArea h2 {
   text-align: center;
@@ -142,6 +149,9 @@ button, input, select, textarea, address {
 #siteMap {
   font-size: max(1.75vw, 0.875rem);
 }
+#siteMap div:first-of-type h3 {
+  color: #c0ff2c;
+}
 
 #footerBottom {
   text-align: center;
@@ -149,6 +159,9 @@ button, input, select, textarea, address {
 }
 #footerBottom a {
   color: #80af1e;
+}
+#footerBottom #contact a {
+  color: #c0ff2c;
 }
 #footerBottom a:hover {
   color: #00ffff;
@@ -227,9 +240,11 @@ footer {
   background-color: rgba(3, 31, 61, 0.8);
 }
 .nav-bar a {
-  color: #80af1e;
   cursor: url("../images/cursors/paw-cursor.png") 16 16, pointer; /* Set pointer cursor for links and buttons */
   padding: 0 1rem;
+}
+.nav-bar a:first-of-type, .nav-bar a:last-of-type {
+  color: #c0ff2c;
 }
 .nav-bar a:hover {
   color: #00ffff;
@@ -363,14 +378,6 @@ svg path {
   float: left;
   width: clamp(7.5rem, 20vw, 15rem);
   margin: 0 0.5rem 0.5rem 0;
-}
-
-#aboutMe a {
-  color: #80af1e;
-  cursor: url("../images/cursors/paw-cursor.png") 16 16, pointer;
-}
-#aboutMe a:hover {
-  color: #00ffff;
 }
 
 #imageGallery img {

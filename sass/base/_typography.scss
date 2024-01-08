@@ -34,6 +34,15 @@
     p:nth-of-type(2) {
         margin-block: 0.5rem;
     }
+
+    a {
+        color: $br-green;
+        cursor: $paw;
+    }
+
+    a:hover {
+        color: $aqua;
+    }
 }
 
 
@@ -66,16 +75,13 @@
     }
 }
 
-
-
-
-
-
-
 #siteMap {
     font-size: max(1.75vw, 0.875rem);
-}
 
+    div:first-of-type h3 {
+        color: $br-green;
+    }
+}
 
 #footerBottom {
     text-align: center;
@@ -83,6 +89,10 @@
 
     a {
         color: $green;
+    }
+
+    #contact a {
+        color: $br-green;
     }
 
     a:hover {
